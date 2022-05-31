@@ -3361,7 +3361,9 @@ with pkgs;
 
   cot = with python3Packages; toPythonApplication cot;
 
-  coturn = callPackage ../servers/coturn { };
+  coturn = callPackage ../servers/coturn {
+    openssl = openssl_1_1;
+  };
 
   coursier = callPackage ../development/tools/coursier {};
 
