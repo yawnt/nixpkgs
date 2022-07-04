@@ -10942,6 +10942,7 @@ in {
   tzlocal = callPackage ../development/python-modules/tzlocal { };
 
   uamqp = callPackage ../development/python-modules/uamqp {
+    openssl = pkgs.openssl_1_1;
     inherit (pkgs.darwin.apple_sdk.frameworks) CFNetwork CoreFoundation Security;
   };
 
