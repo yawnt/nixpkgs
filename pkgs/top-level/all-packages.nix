@@ -27307,7 +27307,9 @@ with pkgs;
 
   foxtrotgps = callPackage ../applications/misc/foxtrotgps { };
 
-  fractal = callPackage ../applications/networking/instant-messengers/fractal { };
+  fractal = callPackage ../applications/networking/instant-messengers/fractal {
+    openssl = openssl_1_1;
+  };
 
   fragments = callPackage ../applications/networking/p2p/fragments { };
 
