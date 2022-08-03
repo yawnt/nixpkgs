@@ -13,7 +13,7 @@ assert builtins.elem type [ "aspnetcore" "runtime" "sdk" ];
 , autoPatchelfHook
 , makeWrapper
 , libunwind
-, openssl
+, openssl_1_1
 , libuuid
 , zlib
 , curl
@@ -46,7 +46,7 @@ stdenv.mkDerivation rec {
     icu
     libunwind
     libuuid
-    openssl
+    openssl_1_1
   ] ++ lib.optional stdenv.isLinux lttng-ust_2_12);
 
   nativeBuildInputs = [
