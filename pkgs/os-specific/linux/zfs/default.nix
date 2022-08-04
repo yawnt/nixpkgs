@@ -16,7 +16,7 @@
 , enablePython ? true
 
 # for determining the latest compatible linuxPackages
-, linuxPackages_5_18 ? pkgs.linuxKernel.packages.linux_5_18
+, linuxPackages_5_19 ? pkgs.linuxKernel.packages.linux_5_19
 }:
 
 let
