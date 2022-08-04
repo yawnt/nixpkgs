@@ -72,7 +72,7 @@ let
         substituteInPlace ./config/user-systemd.m4    --replace "/usr/lib/modules-load.d" "$out/etc/modules-load.d"
         substituteInPlace ./config/zfs-build.m4       --replace "\$sysconfdir/init.d"     "$out/etc/init.d" \
                                                       --replace "/etc/default"            "$out/etc/default"
-        substituteInPlace ./etc/zfs/Makefile.am       --replace "\$(sysconfdir)"          "$out/etc"
+        substituteInPlace ./etc/Makefile.am           --replace "\$(sysconfdir)"          "$out/etc"
 
         substituteInPlace ./contrib/initramfs/hooks/Makefile.am \
           --replace "/usr/share/initramfs-tools/hooks" "$out/usr/share/initramfs-tools/hooks"
@@ -216,28 +216,29 @@ in {
   # to be adapted
   zfsStable = common {
     # check the release notes for compatible kernels
-    kernelCompatible = kernel.kernelOlder "5.19";
-    latestCompatibleLinuxPackages = linuxPackages_5_18;
+    kernelCompatible = kernel.kernelOlder "5.20";
+    latestCompatibleLinuxPackages = linuxPackages_5_19;
 
     # this package should point to the latest release.
     version = "2.1.5";
+    rev = "2f157cbe86882748286c7a9ad6ed872fa68aecd6";
 
-    sha256 = "sha256-a9rmuPO8R8UfxdHvwjfFuYRGn97a1MPmLZRvr3l0swE=";
+    sha256 = "sha256-m2xSxkdk3h75IFuJg2fh2PDKYtjPri7pUMwLz8wVrzw=";
   };
 
   zfsUnstable = common {
     # check the release notes for compatible kernels
-    kernelCompatible = kernel.kernelOlder "5.19";
-    latestCompatibleLinuxPackages = linuxPackages_5_18;
+    kernelCompatible = kernel.kernelOlder "5.20";
+    latestCompatibleLinuxPackages = linuxPackages_5_19;
 
     # this package should point to a version / git revision compatible with the latest kernel release
     # IMPORTANT: Always use a tagged release candidate or commits from the
     # zfs-<version>-staging branch, because this is tested by the OpenZFS
     # maintainers.
     version = "2.1.5";
-    # rev = "0000000000000000000000000000000000000000";
+    rev = "2f157cbe86882748286c7a9ad6ed872fa68aecd6";
 
-    sha256 = "sha256-a9rmuPO8R8UfxdHvwjfFuYRGn97a1MPmLZRvr3l0swE=";
+    sha256 = "sha256-m2xSxkdk3h75IFuJg2fh2PDKYtjPri7pUMwLz8wVrzw=";
 
     isUnstable = true;
   };
