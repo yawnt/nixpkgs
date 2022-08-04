@@ -79,7 +79,7 @@ let
         substituteInPlace ./etc/Makefile.am \
           --replace '$(DESTDIR)$(systemdunitdir)' "$out"'$(DESTDIR)$(systemdunitdir)'
 
-        substituteInPlace ./cmd/vdev_id/vdev_id \
+        substituteInPlace ./udev/vdev_id \
           --replace "PATH=/bin:/sbin:/usr/bin:/usr/sbin" \
           "PATH=${makeBinPath [ coreutils gawk gnused gnugrep systemd ]}"
       '';
